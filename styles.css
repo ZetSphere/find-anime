@@ -1,0 +1,212 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100vh;
+}
+
+/* Header styles */
+header {
+  background-color: #1a1a2e;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.header-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-left: 20px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+header input {
+  padding: 12px 18px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 2px solid #ddd;
+  outline: none;
+  width: 350px;
+  transition: border-color 0.3s;
+}
+
+header input:focus {
+  border-color: #ff6347;
+}
+
+header button {
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+header button:hover {
+  background-color: #ff4500;
+}
+
+/* Main content styles */
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.anime-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.anime-item {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.anime-item img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-bottom: 3px solid #1a1a2e;
+}
+
+.anime-item h3 {
+  font-size: 18px;
+  color: #ffffff;
+  padding: 10px;
+  background-color: #505050;
+  margin-bottom: 15px;
+}
+
+.anime-item a {
+  color: #3636ce;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px;
+  display: inline-block;
+}
+
+.anime-item a:hover {
+  text-decoration: underline;
+}
+
+.anime-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Footer Styles */
+footer {
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 50px;
+  color: #aaa;
+}
+
+footer p {
+  margin: 10px 0;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .search-container {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  header input {
+    width: 80%;
+  }
+
+  header button {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header {
+    padding: 15px 10px; /* Menurunkan padding agar header tidak terlalu besar */
+  }
+
+  header h1 {
+    font-size: 1.8rem; /* Ukuran font lebih kecil untuk header */
+    letter-spacing: 2px; /* Mengurangi jarak antar huruf agar lebih padat */
+  }
+
+  .search-container {
+    width: 100%; /* Form pencarian full-width */
+    margin-top: 15px;
+    justify-content: center;
+  }
+
+  header input {
+    width: 90%; /* Menjaga input hampir full-width, tapi lebih kecil */
+    padding: 10px 12px; /* Mengurangi padding untuk menyesuaikan dengan ukuran layar kecil */
+    font-size: 14px; /* Mengurangi ukuran font agar lebih kecil dan sesuai */
+  }
+
+  header button {
+    width: 90%; /* Tombol juga full-width, dengan ukuran lebih kecil */
+    padding: 10px 12px; /* Mengurangi padding untuk tombol */
+    font-size: 14px;
+  }
+
+  .anime-item img {
+    height: 300px; /* Menurunkan tinggi gambar untuk menghemat ruang */
+    padding: 0; /* Menghapus padding di sekitar gambar */
+  }
+
+  .anime-item h3 {
+    font-size: 14px; /* Mengurangi ukuran font judul anime */
+  }
+}
